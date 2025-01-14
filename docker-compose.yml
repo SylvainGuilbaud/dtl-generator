@@ -6,6 +6,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: dtl-generator
+    hostname: dtl-generator
     restart: always
     command: --check-caps false --ISCAgent false
     ports:
@@ -13,4 +15,4 @@ services:
       - 52795:52773
       - 53773
     volumes:
-      - ./:/home/irisowner/dev/
+      - ./data:/data
